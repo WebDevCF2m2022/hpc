@@ -8,6 +8,3 @@ const DB_NAME = 'db_cmc';
 const DB_CHARSET = 'utf8mb4';
 const DB_PORT = 3307;
 
-// Chemin racine du projet
-$path = dirname(__DIR__);
-define('PATH_ROOT', $path);
