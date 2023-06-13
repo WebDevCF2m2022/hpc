@@ -1,20 +1,20 @@
 <?php
 
 namespace model\MappingModel;
-use moel\AbstractModel\MappingAbstract;
+use model\AbstractModel\MappingAbstract;
 use Exception;
 class serviceMapping extends MappingAbstract
 {
 
-    protected int $serviceId;
+    protected int $serviceID;
     protected string $soins;
     protected string $info_soins;
     protected string $imgSoins;
     
     //getters
-    public function getserviceId(): int
+    public function getserviceID(): int
     {
-        return $this->serviceId;
+        return $this->serviceID;
     }
 
     public function getsoins(): string
@@ -34,14 +34,14 @@ class serviceMapping extends MappingAbstract
 
     //setters
 
-    public function setserviceId(int $serviceId): void
+    public function setserviceID(int $serviceID): void
     {
-        $this->serviceId = $serviceID;
+        $this->serviceID = $serviceID;
     }
 
     public function setsoins(string $soins): void
     {
-        if(strlen($soins) > 50){
+        if(strlen($soins) >=  50){
             throw new Exception("Vous avez dépassé la limite de caractère !");
         }else {
             $soins = strip_tags($soins);
@@ -55,7 +55,7 @@ class serviceMapping extends MappingAbstract
     {
         $this->info_soins = $info_soins;
     }
-    
+
     public function setimgSoins(string $imgSoins): void
     {
         $this->imgSoins = $imgSoins;

@@ -2,7 +2,8 @@
 
 use model\MappingModel\FaqMapping;
 use model\MappingModel\MedecinMapping;
-
+use model\MappingModel\serviceMapping;
+$testjen = new serviceMapping([]);
 $test1 = new FaqMapping([]);
 $test2 = new MedecinMapping([]);
 
@@ -58,4 +59,21 @@ try {
     echo $e->getMessage();
 }
 
-var_dump($test2);
+//var_dump($test2);
+
+
+try{
+    $testjen = new serviceMapping(
+        [
+            "serviceID" => 1,
+            "soins" => "testfghyjkgytgyuyhuyhuihy§yudfhsuiezresdgkluhgkgtyftyfyggjjdhsjkhfcjkerjfhjrhjghrghjrhjcjedcjje",
+            "info_soins" => "test",
+            "imgSoins" => "test",
+
+        ]
+        );
+}
+catch(Exception $e){
+    echo $e->getMessage();
+}
+var_dump($testjen);
