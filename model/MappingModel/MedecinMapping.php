@@ -3,9 +3,14 @@ namespace model\MappingModel;
 use model\AbstractModel\MappingAbstract;
 use Exception;
 class MedecinMapping extends  MappingAbstract{
+
+
     protected int $medecinID;
+
     protected string $name;
+
     protected string $nickname;
+
     protected string $lang;
 
     protected string $info;
@@ -47,7 +52,10 @@ class MedecinMapping extends  MappingAbstract{
     }
     public function setName(string $name): void
     {
+
         if(strlen($name) > 50){
+
+
             throw new Exception("Le nom du médecin ne peut pas dépasser 50 caractères");
         }else {
             $name = strip_tags($name);
@@ -57,7 +65,11 @@ class MedecinMapping extends  MappingAbstract{
     }
     public function setNickname(string $nickname): void
     {
+
         if(strlen($nickname) > 50){
+
+        if(strlen($nickname) > 50) { 
+
             throw new Exception("Le surnom du médecin ne peut pas dépasser 50 caractères");
         }else {
             $nickname = strip_tags($nickname);
@@ -67,7 +79,7 @@ class MedecinMapping extends  MappingAbstract{
     }
     public function setLang(string $lang): void
     {
-        if(strlen($lang) > 50{
+        if(strlen($lang) > 50){
             throw new Exception("La langue du médecin ne peut pas dépasser 50 caractères");
         }else {
             $lang = strip_tags($lang);

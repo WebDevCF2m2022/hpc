@@ -1,9 +1,33 @@
 <?php
 
 use model\MappingModel\FaqMapping;
+
 use model\MappingModel\AdminMapping;
 
+use model\MappingModel\MedecinMapping;
+
+
 $test1 = new FaqMapping([]);
+$test2 = new MedecinMapping([]);
+
+try{
+    $test2 = new MedecinMapping(
+        [
+            "medecinID" => 1,
+            "Name" => "test",
+            "nickName" => "test",
+            "lang" => "test",
+            "info" => "test",
+            "imgMed" => "test"
+
+        ]
+        );
+}
+catch(Exception $e){
+}
+
+
+
 
 try{
     $test2 = new FaqMapping([
@@ -48,3 +72,5 @@ try{
 }
 
 var_dump($test3);
+
+var_dump($test2);
