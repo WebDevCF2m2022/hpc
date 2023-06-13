@@ -52,7 +52,10 @@ class MedecinMapping extends  MappingAbstract{
     }
     public function setName(string $name): void
     {
-        if(strlen($name) > 50){ 
+
+        if(strlen($name) > 50){
+
+
             throw new Exception("Le nom du médecin ne peut pas dépasser 50 caractères");
         }else {
             $name = strip_tags($name);
@@ -62,7 +65,11 @@ class MedecinMapping extends  MappingAbstract{
     }
     public function setNickname(string $nickname): void
     {
+
+        if(strlen($nickname) > 50){
+
         if(strlen($nickname) > 50) { 
+
             throw new Exception("Le surnom du médecin ne peut pas dépasser 50 caractères");
         }else {
             $nickname = strip_tags($nickname);
