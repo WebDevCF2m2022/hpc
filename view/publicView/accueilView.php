@@ -1,6 +1,7 @@
 <?php
 
 use model\MappingModel\FaqMapping;
+use model\MappingModel\AdminMapping;
 
 $test1 = new FaqMapping([]);
 
@@ -37,4 +38,13 @@ try {
     echo $e->getMessage();
 }
 
-var_dump($test1,$test2,$test4);
+try{
+    $test3 = new AdminMapping([
+        "userID" => 3,
+    ]);
+}
+ catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+var_dump($test3);

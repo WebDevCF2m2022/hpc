@@ -28,4 +28,6 @@ try {
     echo 'Erreur de connexion : ' . $e->getMessage();
 }
 
+
+
 require_once "../controller/publicController.php";
