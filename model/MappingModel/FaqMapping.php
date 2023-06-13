@@ -42,6 +42,7 @@ class FaqMapping extends MappingAbstract
             $faqTitle = trim($faqTitle);
             $this->faqTitle = $faqTitle;
         }
+        
     }
 
     public function setFaqText(string $faqText): void
