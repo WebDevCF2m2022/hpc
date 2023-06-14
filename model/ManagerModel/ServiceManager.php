@@ -8,19 +8,19 @@ use Exception;
 class ServiceManager implements ManagerInterface
 {
 
-    private $connect;
+    private PDO $pdo;
 
 
 
-public function __construct(PDO $connection)
+public function __construct(PDO $pdo)
 
 {
-$this->connect = $connection;
+$this->pdo = $pdo;
 }
 
 public function getOneById(int $id): int 
      {
-        $prepare = $this->connect->prepare("SELECT * FROM `cmc_service` WHERE `serviceID` = :id");
+        $prepare = $this->pdo->prepare("SELECT * FROM `cmc_service` WHERE `serviceID` = :id");
         $prepare->bindValue(":id", $id, PDO::PARAM_INT);
         try {
             $prepare->execute();
