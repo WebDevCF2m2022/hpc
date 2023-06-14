@@ -76,7 +76,7 @@ class MedecinMapping extends  MappingAbstract{
             $nickname = trim($nickname);
             $this->nickname = $nickname;
         }
-    }
+    }}
     public function setLang(string $lang): void
     {
         if(strlen($lang) > 50){
