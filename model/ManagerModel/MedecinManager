@@ -1,0 +1,34 @@
+<?php
+namespace model\ManagerModel;
+
+use PDO;
+use model\MappingModel\MedecinMapping;
+use model\InterfaceModel\ManagerInterface;
+
+class MedecinManager implements ManagerInterface
+{
+    private PDO $pdo;
+
+    //function public __construct
+    public function __construct(PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
+
+    //function public GetMedecinByID
+    public function GetMedecinByID(int $id): MedecinMapping
+    {
+        $query = $this->pdo->prepare("SELECT * FROM cmc_medecin WHERE medecinID = :id");
+        $query->execute(['id' => $id]);
+        $medecin = $query->fetchObject(MedecinMapping::class);
+        if ($medecin === false) {
+            throw new \Exception("Aucun medecin ne correspond à l'id $id");
+        }
+        return $medecin;
+    }
+
+    public function getAll() {}
+
+    public function getOneById(int $id) {}
+
+};
