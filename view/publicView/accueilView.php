@@ -11,11 +11,12 @@ use model\MappingModel\serviceMapping;
 
 use model\ManagerModel\MedecinManager;
 
+$test = new MedecinManager($pdo);
 
 //test de la classe MedecinManager avec un try catch et la fonction GetOneById
 try {
-    $test = new MedecinManager($pdo);
-    $medecin = $test->getOneById(1);
+    
+    $medecin = $test->getOneById(3);
    
 } catch (Exception $e) {
     echo $e->getMessage();
@@ -24,15 +25,17 @@ var_dump($medecin);
 
 
 
-//test de la classe MedecinManager avec un try catch et la fonction getAll
+//test de la classe MedecinManager avec un try catch et la fonction GetAll
 try {
-    $test = new MedecinManager($pdo);
-   $affiche = $test->getAll();
+
+    $medecins = $test->getAll();
    
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-var_dump($affiche);
+
+echo "<hr>";
+var_dump($medecins);
 
 $testjen = new serviceMapping([]);
 

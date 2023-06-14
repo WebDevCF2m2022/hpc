@@ -32,10 +32,13 @@ class MedecinManager implements ManagerInterface
         $query = $this->pdo->prepare("SELECT * FROM cmc_medecin");
         $query->execute();
         $medecin = $query->fetchAll();
-        if ($medecin === false) {
-            throw new \Exception("Aucun medecin ne correspond à cette recherche");
+        $medecins=[];
+
+        foreach ($medecin as $row) {
+            $medecins[] = new MedecinMapping($row);
         }
-        return new MedecinMapping($medecin);
+        return $medecins;
+
     }
 
     public function addMedecin(MedecinMapping $medecin) {
