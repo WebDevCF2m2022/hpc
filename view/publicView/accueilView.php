@@ -4,9 +4,36 @@ use model\MappingModel\FaqMapping;
 
 use model\MappingModel\AdminMapping;
 
+
 use model\MappingModel\MedecinMapping;
 
 use model\MappingModel\serviceMapping;
+
+use model\ManagerModel\MedecinManager;
+
+
+//test de la classe MedecinManager avec un try catch et la fonction GetOneById
+try {
+    $test = new MedecinManager($pdo);
+    $medecin = $test->getOneById(1);
+   
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+var_dump($medecin);
+
+
+
+//test de la classe MedecinManager avec un try catch et la fonction getAll
+try {
+    $test = new MedecinManager($pdo);
+   $affiche = $test->getAll();
+   
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+var_dump($affiche);
+
 $testjen = new serviceMapping([]);
 
 
@@ -84,7 +111,7 @@ try{
 catch(Exception $e){
     echo $e->getMessage();
 }
-var_dump($testjen);
+//var_dump($testjen);
 
 try{
     $test3 = new AdminMapping([
@@ -95,6 +122,6 @@ try{
     echo $e->getMessage();
 }
 
-var_dump($test3);
+//var_dump($test3);
 
-var_dump($test2);
+//var_dump($test2);

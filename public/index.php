@@ -10,7 +10,9 @@ require_once '../config.php';
 spl_autoload_register(
     function ($className) {
         $className = str_replace('\\', '/', $className);
-        require_once '../' . $className . '.php';
+       require_once '../' . $className . '.php';
+
+        
     });
 
 // connexion à la base de données en PDO
@@ -27,7 +29,6 @@ try {
 } catch (PDOException $e) {
     echo 'Erreur de connexion : ' . $e->getMessage();
 }
-
 
 
 require_once "../controller/publicController.php";
