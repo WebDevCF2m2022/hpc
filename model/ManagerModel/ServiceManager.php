@@ -1,7 +1,7 @@
 <?php
 namespace model\ManagerModel;
 
-use model\MappingModel\serviceMapping;
+use model\MappingModel\ServiceMapping;
 use model\InterfaceModel\ManagerInterface;
 use PDO;
 use Exception;
@@ -30,7 +30,7 @@ public function getOneById(int $id): ServiceMapping
     
 public function getAll() {
 
-        $query = $this->connect->prepare("SELECT * FROM cmc_service");
+        $query = $this->pdo->prepare("SELECT * FROM cmc_service");
             $query->execute();
             $service = $query->fetchAll();
             $service = [];

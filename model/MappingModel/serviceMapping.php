@@ -2,8 +2,11 @@
 
 namespace model\MappingModel;
 use model\AbstractModel\MappingAbstract;
+use model\InterfaceModel\ManagerInterface;
 use Exception;
-class serviceMapping extends MappingAbstract
+
+
+class ServiceMapping extends MappingAbstract
 {
 
     protected int $serviceID;
