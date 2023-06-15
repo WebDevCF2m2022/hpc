@@ -41,13 +41,36 @@ public function getAll() {
             return $service;
        
     }
-// te la !!!!!!!!!!!!!!!!!
+    
     public function addService(ServiceMapping $service) {
-        $query=$this->pdo->prepare("");
+        $query=$this->pdo->prepare("INSERT INTO `cmc_service` (`serviceID`, `soins`, `info_soins`, `imgSoins`) VALUES (:Name, :soins, :info_soins, :imgSoins )");
         $query->execute([
+            'soins' => $service->getSoins(),
+            'info_soins' => $service->getInfo_soins(),
+            'imgSoins' => $service->getImgsoins()
 
         ]);
         $service->setserviceID($this->pdo->lastInsertID());
     }
 
+    public function updateService(ServiceMapping $service) {
+        $query=$this->pdo->prepare("UPDATE `cmc_service` (`serviceID`, `soins`, `info_soins`, `imgSoins`) VALUES (:Name, :soins, :info_soins, :imgSoins )");
+        $query->execute([
+            'soins' => $service->getSoins(),
+            'info_soins' => $service->getInfo_soins(),
+            'imgSoins' => $service->getImgsoins()
+
+        ]);
+        
     }
+
+    public function deleteService(ServiceMapping $service) {
+        $query=$this->pdo->prepare("DELETE FROM cmc_service WHERE serviceID = :serviceID");
+        $query->execute([
+           'serviceID' => $service->getServiceID()
+
+        ]);
+        
+    }
+
+    };
