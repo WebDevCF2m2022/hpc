@@ -36,6 +36,7 @@ try {
 
 echo "<hr>";
 var_dump($medecins);
+echo "<hr>";
 
 $testjen = new serviceMapping([]);
 
@@ -68,7 +69,7 @@ try{
     $test2 = new FaqMapping([
         "faqID" => 1,
         "faqTitle" => "test",
-        "faqText" => "text",
+        "faqText" => "texttrrzreee",
         "lulu" => "lala"
     ]);
 }catch(Exception $e){
@@ -78,8 +79,8 @@ try{
 try {
     $test3 = new FaqMapping([
         "faqID" => 1,
-        "faqTitle" => " testtesttesttesttesttesttesttesttest testtesttesttesttesttesttesttesttesttesttesttesttesttesttest testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest",
-        "faqText" => "text",
+        "faqTitle" => " testtesttesttesttesttesttesttesttest",
+        "faqText" => "textertyuio",
         "lulu" => "lala"
     ]);
 } catch (Exception $e) {
@@ -90,7 +91,7 @@ try {
     $test4 = new FaqMapping([
         "faqID" => 7,
         "faqTitle" => "test",
-        "faqText" => "text",
+        "faqText" => "texhbdiuehfbejt",
         "lulu" => "lala dfgrfggh rthgh"
     ]);
 } catch (Exception $e) {
@@ -104,7 +105,7 @@ try{
     $testjen = new serviceMapping(
         [
             "serviceID" => 1,
-            "soins" => "testfghyjkgytgyuyhuyhuihy§yudfhsuiezresdgkluhgkgtyftyfyggjjdhsjkhfcjkerjfhjrhjghrghjrhjcjedcjje",
+            "soins" => "test",
             "info_soins" => "test",
             "imgSoins" => "test",
 
