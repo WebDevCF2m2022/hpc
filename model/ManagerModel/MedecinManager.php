@@ -53,17 +53,19 @@ class MedecinManager implements ManagerInterface
         $medecin->setMedecinID($this->pdo->lastInsertId());
     }
 
+    //public fnction updateMedecin avec bindValue et prepare
     public function updateMedecin(MedecinMapping $medecin) {
-        $query = $this->pdo->prepare("UPDATE cmc_medecin SET Name = :Name, nickName = :nickName, lang = :lang, info = :info, imgMed = :imgMed WHERE medecinID = :medecinID");
-        $query->execute([
-            'Name' => $medecin->getName(),
-            'nickName' => $medecin->getNickName(),
-            'lang' => $medecin->getLang(),
-            'info' => $medecin->getInfo(),
-            'imgMed' => $medecin->getImgMed(),
-            'medecinID' => $medecin->getMedecinID()
-        ]);
+        $query = $this->pdo->prepare("UPDATE cmc_medecin SET name = ?Name, nickame = ?nickName, lang = ?lang, info = ?info, imgMed = ?imgMed WHERE cmc_medecin.medecinID = ?medecinID");
+        $query->bindValue(':name', $medecin->getName(), PDO::PARAM_STR);
+        $query->bindValue(':nickName', $medecin->getNickName(), PDO::PARAM_STR);
+        $query->bindValue(':lang', $medecin->getLang(), PDO::PARAM_STR);
+        $query->bindValue(':info', $medecin->getInfo(), PDO::PARAM_STR);
+        $query->bindValue(':imgMed', $medecin->getImgMed(), PDO::PARAM_STR);
+        $query->bindValue(':medecinID', $medecin->getMedecinID(), PDO::PARAM_INT);
+        $query->execute();
     }
+
+ 
 
     public function deleteMedecin(MedecinMapping $medecin) {
         $query = $this->pdo->prepare("DELETE FROM cmc_medecin WHERE medecinID = :medecinID");
