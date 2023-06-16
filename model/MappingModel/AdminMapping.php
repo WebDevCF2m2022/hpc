@@ -98,9 +98,9 @@ public function setUserUniqID(string $user_uniqID): void
     if(strlen($user_uniqID) > 250){
         throw new Exception("un erreur est survenue");
     }else {
-    $$user_uniqID =strip_tags($user_uniqID);
-    $$user_uniqID =trim($user_uniqID);
-    $this->user_mail = $user_uniqID;
+    $user_uniqID =strip_tags($user_uniqID);
+    $user_uniqID =trim($user_uniqID);
+    $this->user_uniqID = $user_uniqID;
     }
 }
 
