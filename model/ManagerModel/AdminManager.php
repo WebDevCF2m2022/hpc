@@ -82,3 +82,4 @@ class AdminManager implements ManagerInterface
     }
 
 }
+

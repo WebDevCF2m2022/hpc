@@ -15,4 +15,8 @@ interface ManagerInterface
 
     // méthode pour récupérer un objet de la table via son id
     public function getOneById(int $id);
+
+    //méthode pour ajouter un medecin a la table 
+    
+
 }

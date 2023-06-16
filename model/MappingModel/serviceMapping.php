@@ -2,8 +2,11 @@
 
 namespace model\MappingModel;
 use model\AbstractModel\MappingAbstract;
+use model\InterfaceModel\ManagerInterface;
 use Exception;
-class serviceMapping extends MappingAbstract
+
+
+class ServiceMapping extends MappingAbstract
 {
 
     protected int $serviceID;
@@ -12,34 +15,34 @@ class serviceMapping extends MappingAbstract
     protected string $imgSoins;
     
     //getters
-    public function getserviceID(): int
+    public function getServiceID(): int
     {
         return $this->serviceID;
     }
 
-    public function getsoins(): string
+    public function getSoins(): string
     {
         return $this->soins;
 
     }
 
-    public function getinfo_soins(): string
+    public function getInfo_soins(): string
     {
         return $this->info_soins;
     }
-    public function getimgSoins(): string
+    public function getImgSoins(): string
     {
         return $this->imgSoins;
     }
 
     //setters
 
-    public function setserviceID(int $serviceID): void
+    public function setServiceID(int $serviceID): void
     {
         $this->serviceID = $serviceID;
     }
 
-    public function setsoins(string $soins): void
+    public function setSoins(string $soins): void
     {
         if(strlen($soins) >=  50){
             throw new Exception("Vous avez dépassé la limite de caractère !");
@@ -51,12 +54,12 @@ class serviceMapping extends MappingAbstract
         
     }
 
-    public function setinfo_soins(string $info_soins): void
+    public function setInfo_soins(string $info_soins): void
     {
         $this->info_soins = $info_soins;
     }
 
-    public function setimgSoins(string $imgSoins): void
+    public function setImgSoins(string $imgSoins): void
     {
         $this->imgSoins = $imgSoins;
 

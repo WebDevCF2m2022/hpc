@@ -66,8 +66,6 @@ class MedecinMapping extends  MappingAbstract{
     public function setNickname(string $nickname): void
     {
 
-        if(strlen($nickname) > 50){
-
         if(strlen($nickname) > 50) { 
 
             throw new Exception("Le surnom du médecin ne peut pas dépasser 50 caractères");

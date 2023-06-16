@@ -4,19 +4,83 @@ use model\MappingModel\FaqMapping;
 
 use model\MappingModel\AdminMapping;
 
+
 use model\MappingModel\MedecinMapping;
 
-use model\MappingModel\serviceMapping;
-$testjen = new serviceMapping([]);
+use model\MappingModel\ServiceMapping;
+
+use model\ManagerModel\MedecinManager;
+use model\ManagerModel\ServiceManager;
+
+$jen = new ServiceManager($pdo);
+$testCoco = new MedecinManager($pdo);
+//test de la classe ServiceManager avec try catch + GetOneById
+
+try {
+    
+    $service = $jen->getOneById(1);
+   
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+var_dump($service);
+
+
+//test de la classe ServiceManager avec try catch + GetAll
+$jen2 = [];
+try {
+
+   $jen2= $service = $jen->getAll();
+   
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+
+var_dump($service);
+echo "<hr>";
+
+
+
+echo "<hr>";
+echo "Test Coco";
+
+
+//test de la classe MedecinManager avec un try catch et la fonction GetOneById
+try {
+    
+    $medecin = $testCoco->getOneById(3);
+   
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+var_dump($medecin);
+
+
+
+//test de la classe MedecinManager avec un try catch et la fonction GetAll
+try {
+
+    $medecins = $testCoco->getAll();
+   
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+
+var_dump($medecins);
+echo "<hr>";
+
+$testCocojen = new ServiceMapping([]);
 
 
 
 
-$test1 = new FaqMapping([]);
-$test2 = new MedecinMapping([]);
+$testCoco1 = new FaqMapping([]);
+$testCoco2 = new MedecinMapping([]);
 
 try{
-    $test2 = new MedecinMapping(
+    $testCoco2 = new MedecinMapping(
         [
             "medecinID" => 1,
             "Name" => "test",
@@ -35,10 +99,10 @@ catch(Exception $e){
 
 
 try{
-    $test2 = new FaqMapping([
+    $testCoco2 = new FaqMapping([
         "faqID" => 1,
         "faqTitle" => "test",
-        "faqText" => "text",
+        "faqText" => "texttrrzreee",
         "lulu" => "lala"
     ]);
 }catch(Exception $e){
@@ -46,10 +110,10 @@ try{
 }
 
 try {
-    $test3 = new FaqMapping([
+    $testCoco3 = new FaqMapping([
         "faqID" => 1,
-        "faqTitle" => " testtesttesttesttesttesttesttesttest testtesttesttesttesttesttesttesttesttesttesttesttesttesttest testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttest testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest",
-        "faqText" => "text",
+        "faqTitle" => " testtesttesttesttesttesttesttesttest",
+        "faqText" => "textertyuio",
         "lulu" => "lala"
     ]);
 } catch (Exception $e) {
@@ -57,24 +121,24 @@ try {
 }
 
 try {
-    $test4 = new FaqMapping([
+    $testCoco4 = new FaqMapping([
         "faqID" => 7,
         "faqTitle" => "test",
-        "faqText" => "text",
+        "faqText" => "texhbdiuehfbejt",
         "lulu" => "lala dfgrfggh rthgh"
     ]);
 } catch (Exception $e) {
     echo $e->getMessage();
 }
 
-//var_dump($test2);
+//var_dump($testCoco2);
 
 
-try{
-    $testjen = new serviceMapping(
+/*try{
+    $testCocojen = new ServiceMapping(
         [
             "serviceID" => 1,
-            "soins" => "testfghyjkgytgyuyhuyhuihy§yudfhsuiezresdgkluhgkgtyftyfyggjjdhsjkhfcjkerjfhjrhjghrghjrhjcjedcjje",
+            "soins" => "test",
             "info_soins" => "test",
             "imgSoins" => "test",
 
@@ -84,10 +148,10 @@ try{
 catch(Exception $e){
     echo $e->getMessage();
 }
-var_dump($testjen);
+//var_dump($testCocojen);*/
 
 try{
-    $test3 = new AdminMapping([
+    $testCoco3 = new AdminMapping([
         "userID" => 3,
     ]);
 }
@@ -95,6 +159,6 @@ try{
     echo $e->getMessage();
 }
 
-var_dump($test3);
+//var_dump($testCoco3);
 
-var_dump($test2);
+//var_dump($testCoco2);
