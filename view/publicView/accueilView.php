@@ -46,6 +46,10 @@ echo "<hr>";
 echo "Test Coco";
 
 
+
+
+
+
 //test de la classe MedecinManager avec un try catch et la fonction GetOneById
 try {
     
@@ -165,3 +169,51 @@ try{
 //var_dump($testCoco3);
 
 //var_dump($testCoco2);
+
+echo "<hr>";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Admin</h1>
+    <a href="?disconnect">Deconnexion</a>
+    <?php
+    try {
+
+        $medecins2 = $testCoco->getAll();
+       // var_dump($medecins2);
+        //echo"<hr>";
+        
+        foreach($medecins2 as $item) {
+
+            ?>
+            <form action="?=updateMedecin=<?$item['medecinID']?>" method="post">
+            <input type="text" name="Name" value="<?= $item->getName() ?>">
+            <input type="text" name="nickName" value="<?= $item->getNickName() ?>">
+            <input type="text" name="lang" value="<?= $item->getLang() ?>">
+            <input type="text" name="info" value="<?= $item->getInfo() ?>">
+            <input type="text" name="imgMed" value="<?= $item->getImgMed() ?>">
+            <input type="submit" name="update" value="Modifier">
+            </form>
+
+    <?php
+            var_dump($item);
+        }
+       
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    //test de la classe MedecinManager avec un foreach et la fonction updateMedecin
+    
+
+    
+    ?>
+   
+</body>
+</html>
