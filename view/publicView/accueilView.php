@@ -148,6 +148,11 @@ echo "<hr>";
     <title>Admin</title>
 </head>
 <body>
+    <nav>
+        <?php
+        include_once "../view/publicView/src/menu.php"
+        ?>
+    </nav>
     <h1>Admin</h1>
     <a href="?disconnect">Deconnexion</a>
     <?php

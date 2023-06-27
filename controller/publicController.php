@@ -3,16 +3,16 @@
 require_once "../view/publicView/accueilView.php";
 
 
-if (isset ($_Get['p'])){
+if (isset ($_GET['p'])){
 
-    switch ($_Get['p']){
+    switch ($_GET['p']){
 
         case "acceuil":
-            include_once "../publicView/acceuilView.php";
+            include_once "../view/publicView/acceuilView.php";
             break;
 
         case "service":
-            include_once "../publicView/serviceView.php";
+            include_once "../view/publicView/serviceView.php";
             break;
 
         case "agen":
@@ -32,7 +32,7 @@ if (isset ($_Get['p'])){
             break;
         
         default:
-            include_once "../publicView/404Error.php";
+            include_once "../publicView/404View.php";
             
     }
 }
