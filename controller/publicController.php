@@ -16,23 +16,23 @@ if (isset ($_GET['p'])){
             break;
 
         case "agen":
-            include_once "../publicView/agendaView.php";
+            include_once "../view/publicView/agendaView.php";
             break;
 
         case "contc":
-            include_once "../publicView/contactView.php";
+            include_once "../view/publicView/contactView.php";
             break;
 
         case "faq":
-            include_once "../publicView/faqView.php";
+            include_once "../view/publicView/faqView.php";
             break;
             
-        case "admin":
-            include_once "../publicView/adminView.php";
+        case "connexion":
+            include_once "../view/publicView/connexion.php";
             break;
         
         default:
-            include_once "../publicView/404View.php";
+            include_once "../view/publicView/404View.php";
             
     }
 }
