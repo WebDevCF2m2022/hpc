@@ -149,38 +149,20 @@ echo "<hr>";
 </head>
 <body>
     <h1>Admin</h1>
-    <a href="?disconnect">Deconnexion</a>
-    <?php
-    try {
+    <a href="?=deconnect">Deconnexion</a>
 
-        $medecins2 = $testCoco->getAll();
-       // var_dump($medecins2);
-        //echo"<hr>";
+
+<form action="?addMedecin" method="post" enctype="multipart/form-data">
+        <td><input type="text" name="name" placeholder="name"></td>
+        <td><input type="text" name="nickName" placeholder="nickName"></td>
+        <td><input type="text" name="lang" placeholder="lang"></td>
+        <td><input type="text" name="info" placeholder="info"></td>
+        <td><input type="text" name="imgMed" placeholder="imgMed"></td>
         
-        foreach($medecins2 as $item) {
 
-            ?>
-            <form action="?=updateMedecin=<?$item['medecinID']?>" method="post">
-            <input type="text" name="Name" value="<?= $item->getName() ?>">
-            <input type="text" name="nickName" value="<?= $item->getNickName() ?>">
-            <input type="text" name="lang" value="<?= $item->getLang() ?>">
-            <input type="text" name="info" value="<?= $item->getInfo() ?>">
-            <input type="text" name="imgMed" value="<?= $item->getImgMed() ?>">
-            <input type="submit" name="update" value="Modifier">
-            </form>
 
-    <?php
-            var_dump($item);
-        }
-       
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
-    //test de la classe MedecinManager avec un foreach et la fonction updateMedecin
-    
-
-    
-    ?>
+        <td><button type="submit" name="submit" value="Ajouter"></button></td>
+      
    
 </body>
 </html>
