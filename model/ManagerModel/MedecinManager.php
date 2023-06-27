@@ -43,28 +43,40 @@ class MedecinManager implements ManagerInterface
 
     }
 
-    public function addMedecin(MedecinMapping $medecin) {
-        $query = $this->pdo->prepare("INSERT INTO cmc_medecin (Name, nickName, lang, info, imgMed) VALUES (:Name, :nickName, :lang, :info, :imgMed)");
-        $query->execute([
-            'Name' => $medecin->getName(),
-            'nickName' => $medecin->getNickName(),
-            'lang' => $medecin->getLang(),
-            'info' => $medecin->getInfo(),
-            'imgMed' => $medecin->getImgMed()
-        ]);
-        $medecin->setMedecinID($this->pdo->lastInsertId());
+ 
+
+    function addInstrument(MedecinMapping $medecin) {
+        $retour = $this->pdo->prepare('INSERT INTO cmc_medecin (name,`nickName`,`lang`,`info`,imgMed) VALUES (?, ?, ?, ?, ?, ?)');
+        try{
+            $retour->execute([
+                'Name' => $medecin->getName(),
+                'nickName' => $medecin->getNickName(),
+                'lang' => $medecin->getLang(),
+                'info' => $medecin->getInfo(),
+                'imgMed' => $medecin->getImgMed()
+            ]);
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+        return $medecin->setMedecinID($this->pdo->lastInsertId());
     }
 
-    //public fnction updateMedecin avec bindValue et prepare
+  
+
+    //Create function public updateMedecin avec bindParam et prepare et un try catch
     public function updateMedecin(MedecinMapping $medecin) {
-        $query = $this->pdo->prepare("UPDATE cmc_medecin SET name = ?Name, nickame = ?nickName, lang = ?lang, info = ?info, imgMed = ?imgMed WHERE cmc_medecin.medecinID = ?medecinID");
-        $query->bindValue(':name', $medecin->getName(), PDO::PARAM_STR);
-        $query->bindValue(':nickName', $medecin->getNickName(), PDO::PARAM_STR);
-        $query->bindValue(':lang', $medecin->getLang(), PDO::PARAM_STR);
-        $query->bindValue(':info', $medecin->getInfo(), PDO::PARAM_STR);
-        $query->bindValue(':imgMed', $medecin->getImgMed(), PDO::PARAM_STR);
-        $query->bindValue(':medecinID', $medecin->getMedecinID(), PDO::PARAM_INT);
-        $query->execute();
+        $query = $this->pdo->prepare("UPDATE cmc_medecin SET name = :name, nickame = :nickName, lang = :lang, info = :info, imgMed = :imgMed WHERE medecinID = ?");
+        $query->bindParam(':name', $medecin->getName(), PDO::PARAM_STR);
+        $query->bindParam(':nickName', $medecin->getNickName(), PDO::PARAM_STR);
+        $query->bindParam(':lang', $medecin->getLang(), PDO::PARAM_STR);
+        $query->bindParam(':info', $medecin->getInfo(), PDO::PARAM_STR);
+        $query->bindParam(':imgMed', $medecin->getImgMed(), PDO::PARAM_STR);
+        $query->bindParam(':medecinID', $medecin->getMedecinID(), PDO::PARAM_INT);
+        try {
+            $query->execute();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
     }
 
  
