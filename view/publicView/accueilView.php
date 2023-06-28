@@ -1,5 +1,5 @@
 <?php
-
+/*
 use model\MappingModel\FaqMapping;
 
 use model\MappingModel\AdminMapping;
@@ -123,7 +123,7 @@ catch(Exception $e){
     echo $e->getMessage();
 }
 //var_dump($testCocojen);*/
-
+/*
 try{
     $testCoco3 = new AdminMapping([
         "userID" => 3,
@@ -139,35 +139,30 @@ try{
 
 echo "<hr>";
 ?>
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <link rel="stylesheet" href="css/menuCSS.css">
+    <title>Accueil</title>
 </head>
 <body>
-    <nav>
+
         <?php
         include_once "../view/publicView/src/menu.php"
         ?>
-    </nav>
-    <h1>Admin</h1>
-    <a href="?=deconnect">Deconnexion</a>
 
 
-<form action="?addMedecin" method="post" enctype="multipart/form-data">
-        <td><input type="text" name="name" placeholder="name"></td>
-        <td><input type="text" name="nickName" placeholder="nickName"></td>
-        <td><input type="text" name="lang" placeholder="lang"></td>
-        <td><input type="text" name="info" placeholder="info"></td>
-        <td><input type="text" name="imgMed" placeholder="imgMed"></td>
-        
 
 
-        <td><button type="submit" name="submit" value="Ajouter"></button></td>
+
+
       
    
 </body>
 </html>
+
