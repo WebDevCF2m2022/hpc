@@ -12,8 +12,22 @@
        require_once "src/menu.php";
         ?>
     </nav>
+    <div class="banniere"></div>
     <h1>Nos Services</h1>
-    <p></p>
+
+    <h1>medecin</h1>
+    <img src="" alt="">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, optio quae atque similique sed explicabo quo, assumenda quidem praesentium dignissimos eligendi accusamus aliquid, sequi veniam! Distinctio repellendus in tempore quis? Doloribus, beatae? Rerum voluptatibus maiores dolores expedita tempore odio fugiat eum commodi error! Minus illum eos aspernatur ea modi, aut tempora magnam esse quibusdam eum dolorum, fuga laboriosam soluta asperiores</p>
+
+    <h1>radiologie</h1>
+    <img src="" alt="">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, optio quae atque similique sed explicabo quo, assumenda quidem praesentium dignissimos eligendi accusamus aliquid, sequi veniam! Distinctio repellendus in tempore quis? Doloribus, beatae? Rerum voluptatibus maiores dolores expedita tempore odio fugiat eum commodi error! Minus illum eos aspernatur ea modi, aut tempora magnam esse quibusdam eum dolorum, fuga laboriosam soluta asperiores</p>
+
+
+    <h1>gynécologie</h1>
+    <img src="" alt="">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, optio quae atque similique sed explicabo quo, assumenda quidem praesentium dignissimos eligendi accusamus aliquid, sequi veniam! Distinctio repellendus in tempore quis? Doloribus, beatae? Rerum voluptatibus maiores dolores expedita tempore odio fugiat eum commodi error! Minus illum eos aspernatur ea modi, aut tempora magnam esse quibusdam eum dolorum, fuga laboriosam soluta asperiores</p>
+
 
     <footer>
         <?php
