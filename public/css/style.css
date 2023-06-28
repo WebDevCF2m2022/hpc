@@ -1,3 +1,39 @@
-.banniere {
-    background-image: url(img/);
+/*Services jen*/
+.banniere  {
+    height:300px;
+   background-image: url(../img/banniereService.jpg);
+}
+.serviceDoc{
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    
+}
+.docteur {
+    background-color:rgb(105, 140, 255);
+    height: 180px;
+    width: 180px;
+}
+
+ h1 {
+    text-align: center;
+ }
+ p{
+    text-align: center;
+ }
+ /*footer*/
+ footer{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding: 1.5em;
+ }
+
+#socialLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 100%;
 }
