@@ -1,0 +1,54 @@
+/*CSS MENU*/
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: white;
+}
+nav {
+  display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap:  wrap ;
+    width: 100%;
+    height: min-content;
+    top: 0;
+
+
+}
+nav .logo{
+    margin-right: 35%;
+    margin-top: 1%;
+}
+nav a{
+    text-decoration: none;
+    color: royalblue;
+    font-size: 1.5rem;
+
+    width: 10%;
+}
+nav a:hover{
+    color: deepskyblue;
+}
+nav .admin{
+    width: 2rem;
+   margin-left: 10%;
+      border-radius: 50%;
+    border: 2px solid black;
+}
+nav .admin:hover{
+    border: 2px solid deepskyblue;
+}
+.langueMenu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 5%;
+}
+#lg{
+    width: auto;
+}
