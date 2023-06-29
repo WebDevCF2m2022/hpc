@@ -4,9 +4,15 @@
    background-image: url(../img/banniereService.jpg);
 }
 .serviceDoc{
+    display: grid;
+    grid-template-columns: ;
+    grid-template-rows: ;
+    grid-template-areas: ;
+    
     background-color: royalblue;
     display: flex;
     flex-direction: row;
+    margin: 30px;
     
 }
 .docteur {
