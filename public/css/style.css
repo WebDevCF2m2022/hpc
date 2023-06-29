@@ -21,19 +21,25 @@
  p{
     text-align: center;
  }
- /*footer*/
- footer{
-    background-color: aquamarine;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    padding: 1.5em;
+ /*contact jen*/
+ #infoContact{
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    grid-template-rows:1fr 2fr 1fr ;
+    grid-template-areas:
+    "inf  inf"
+    "ho map"
+    "part part" ;
  }
-
-#socialLogo{
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    width: 100%;
+#info {
+    grid-area: inf;
+}
+#horaireContac{
+    grid-area: ho;
+}
+#map{
+    grid-area: map;
+}
+#partenaire{
+    grid-area: part;
 }
