@@ -161,6 +161,11 @@ echo "<hr>";
 
 
 
+
+<?php
+include_once "../view/publicView/src/foot.php"
+        ?>
+
       
    
 </body>
