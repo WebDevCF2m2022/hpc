@@ -1,6 +1,6 @@
 <?php
 
-require_once "../view/publicView/accueilView.php";
+
 
 
 if (isset ($_GET['p'])){
@@ -8,7 +8,7 @@ if (isset ($_GET['p'])){
     switch ($_GET['p']){
 
         case "acceuil":
-            include_once "../view/publicView/acceuilView.php";
+            include_once "../view/publicView/accueilView.php";
             break;
 
         case "service":
@@ -35,5 +35,7 @@ if (isset ($_GET['p'])){
             include_once "../view/publicView/404View.php";
             
     }
+}else {
+    include_once "../view/publicView/accueilView.php";
 }
 

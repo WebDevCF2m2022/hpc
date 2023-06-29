@@ -156,8 +156,48 @@ echo "<hr>";
         include_once "../view/publicView/src/menu.php"
         ?>
 
+<div class="containerPhoto">
 
+            <img src="img/medecin.jpg">
 
+    </div>
+
+        <div id="services">
+            <h1>OUR SERVICES</h1>
+            <hr>
+            <div id="positionCarte">
+                <div class="carteServices">
+                    <img src="img/logoMed.png" alt="">
+                    <h1>GENERALISTE</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
+                    <a href="#">SHOW ME</a>
+                </div>
+                <div class="carteServices">
+                    <img src="img/logoMed.png" alt="">
+                    <h1>INFIRMIER</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
+                    <a href=""">SHOW ME</a>
+                </div>
+                <div class="carteServices">
+                    <img src="img/logoMed.png" alt="">
+                    <h1>RADIOLOGIE</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
+                    <a href="#">SHOW ME</a>
+                </div>
+                <div class="carteServices">
+                    <img src="img/logoMed.png" alt="">
+                    <h1>PSYCOLOGIE</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
+                    <a href="#">SHOW ME</a>
+                </div>
+                <div class="carteServices">
+                    <img src="img/logoMed.png" alt="">
+                    <h1>DENTISTERIE</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
+                    <a href="#">SHOW ME</a>
+                </div>
+            </div>
+        </div>
 
 
 
