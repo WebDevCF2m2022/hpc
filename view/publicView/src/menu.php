@@ -1,6 +1,6 @@
   <nav>
         <img class="logo" src="img/logo.png">
-        <a href="./">Acceuil</a>
+        <a href="./">Accueil</a>
         <a href="?p=service">Nos services</a>
         <a href="?p=agen">Agenda</a>
         <a href="?p=contc">Contact</a>

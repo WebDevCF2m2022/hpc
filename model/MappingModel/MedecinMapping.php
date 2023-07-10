@@ -24,6 +24,7 @@ class MedecinMapping extends  MappingAbstract{
     public function getName(): string
     {
         return $this->name;
+
     }
     public function getNickname(): string
     {
