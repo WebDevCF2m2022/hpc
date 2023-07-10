@@ -45,15 +45,15 @@ class MedecinManager implements ManagerInterface
 
  
 
-    function addInstrument(MedecinMapping $medecin) {
-        $retour = $this->pdo->prepare('INSERT INTO cmc_medecin (name,`nickName`,`lang`,`info`,imgMed) VALUES (?, ?, ?, ?, ?, ?)');
+    function add(MedecinMapping $medecin) {
+        $retour = $this->pdo->prepare('INSERT INTO cmc_medecin (name,`nickname`,`lang`,`info`,imgMed) VALUES (?, ?, ?, ?, ?)');
         try{
             $retour->execute([
-                'Name' => $medecin->getName(),
-                'nickName' => $medecin->getNickName(),
-                'lang' => $medecin->getLang(),
-                'info' => $medecin->getInfo(),
-                'imgMed' => $medecin->getImgMed()
+                $medecin->getName(),
+                $medecin->getNickname(),
+                $medecin->getLang(),
+                $medecin->getInfo(),
+                $medecin->getImgMed()
             ]);
         }catch(Exception $e){
             die($e->getMessage());
@@ -61,31 +61,45 @@ class MedecinManager implements ManagerInterface
         return $medecin->setMedecinID($this->pdo->lastInsertId());
     }
 
-  
 
-    //Create function public updateMedecin avec bindParam et prepare et un try catch
-    public function updateMedecin(MedecinMapping $medecin) {
-        $query = $this->pdo->prepare("UPDATE cmc_medecin SET name = :name, nickame = :nickName, lang = :lang, info = :info, imgMed = :imgMed WHERE medecinID = ?");
-        $query->bindParam(':name', $medecin->getName(), PDO::PARAM_STR);
-        $query->bindParam(':nickName', $medecin->getNickName(), PDO::PARAM_STR);
-        $query->bindParam(':lang', $medecin->getLang(), PDO::PARAM_STR);
-        $query->bindParam(':info', $medecin->getInfo(), PDO::PARAM_STR);
-        $query->bindParam(':imgMed', $medecin->getImgMed(), PDO::PARAM_STR);
-        $query->bindParam(':medecinID', $medecin->getMedecinID(), PDO::PARAM_INT);
-        try {
-            $query->execute();
-        } catch (Exception $e) {
-            echo $e->getMessage();
+
+    public function update(MedecinMapping $medecin) {
+        $sql = "UPDATE `cmc_medecin` SET `name`= :name, `nickname`= :nickname, `lang`= :lang, `info`= :info,`imgMed`= :imgMed 
+                WHERE `medecinID`= :medecinID";
+        $prepare = $this->pdo->prepare($sql);
+
+        $prepare->bindValue(':name', $medecin->getName(), PDO::PARAM_STR);
+        $prepare->bindValue(':nickname', $medecin->getNickname(), PDO::PARAM_STR);
+        $prepare->bindValue(':lang', $medecin->getLang(), PDO::PARAM_STR);
+        $prepare->bindValue(':info', $medecin->getInfo(), PDO::PARAM_STR);
+        $prepare->bindValue(':imgMed', $medecin->getImgMed(), PDO::PARAM_STR);
+
+
+        $prepare->execute();
+
+        try{
+            $this->pdo->commit();
+            return true;
+        }catch(Exception $e){
+            $e -> getMessage();
         }
+
     }
 
- 
 
-    public function deleteMedecin(MedecinMapping $medecin) {
-        $query = $this->pdo->prepare("DELETE FROM cmc_medecin WHERE medecinID = :medecinID");
-        $query->execute([
-            'medecinID' => $medecin->getMedecinID()
-        ]);
+
+
+    public function delete($medecinID) {
+        $sql = "DELETE FROM cmc_medecin WHERE medecinId = :medecinId";
+        $prepare = $this -> pdo -> prepare($sql);
+        $prepare->bindParam(':medecinId', $medecinID, PDO::PARAM_INT);
+
+        try{
+            $prepare -> execute();
+            return true;
+        }catch(Exception $e){
+            $e->getMessage();
+        }
     }
 
 
