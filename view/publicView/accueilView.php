@@ -16,7 +16,7 @@ $jen = new ServiceManager($pdo);
 $testCoco = new MedecinManager($pdo);
 
 
-
+/*
 //test de la classe MedecinManager avec un try catch et la fonction GetOneById
 try {
     
@@ -140,8 +140,8 @@ try{
 echo "<hr>";
 ?>
 
-?>
-<!--
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
