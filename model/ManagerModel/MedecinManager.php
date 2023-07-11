@@ -63,7 +63,7 @@ class MedecinManager implements ManagerInterface
 
 
 
-    public function update(MedecinMapping $medecin) {
+    public function update(MedecinMapping $medecin,int $id) {
         $sql = "UPDATE `cmc_medecin` SET `name`= :name, `nickname`= :nickname, `lang`= :lang, `info`= :info,`imgMed`= :imgMed 
                 WHERE `medecinID`= :medecinID";
         $prepare = $this->pdo->prepare($sql);
@@ -73,6 +73,7 @@ class MedecinManager implements ManagerInterface
         $prepare->bindValue(':lang', $medecin->getLang(), PDO::PARAM_STR);
         $prepare->bindValue(':info', $medecin->getInfo(), PDO::PARAM_STR);
         $prepare->bindValue(':imgMed', $medecin->getImgMed(), PDO::PARAM_STR);
+        $prepare->bindValue(':medecinID', $id, PDO::PARAM_INT);
 
 
         $prepare->execute();
