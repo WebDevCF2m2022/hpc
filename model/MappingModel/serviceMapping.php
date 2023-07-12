@@ -6,7 +6,7 @@ use model\InterfaceModel\ManagerInterface;
 use Exception;
 
 
-class ServiceMapping extends MappingAbstract
+class serviceMapping extends MappingAbstract
 {
 
     protected int $serviceID;
@@ -19,6 +19,7 @@ class ServiceMapping extends MappingAbstract
     {
         return $this->serviceID;
     }
+
 
     public function getSoins(): string
     {
