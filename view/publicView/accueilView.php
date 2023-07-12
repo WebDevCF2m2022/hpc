@@ -1,5 +1,5 @@
 <?php
-/*
+
 use model\MappingModel\FaqMapping;
 
 use model\MappingModel\AdminMapping;
@@ -16,7 +16,7 @@ $jen = new ServiceManager($pdo);
 $testCoco = new MedecinManager($pdo);
 
 
-
+/*
 //test de la classe MedecinManager avec un try catch et la fonction GetOneById
 try {
     
@@ -123,7 +123,7 @@ catch(Exception $e){
     echo $e->getMessage();
 }
 //var_dump($testCocojen);*/
-/*
+
 try{
     $testCoco3 = new AdminMapping([
         "userID" => 3,
@@ -139,8 +139,9 @@ try{
 
 echo "<hr>";
 ?>
-*/
-?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
