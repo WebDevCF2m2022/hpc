@@ -41,7 +41,7 @@ public function getAll() {
             return $services;
        
     }
-    
+
     public function addService(ServiceMapping $service) {
         $query=$this->pdo->prepare("INSERT INTO cmc_service (Name, soins, info_soins,imgSoins) VALUES (:Name, :soins, :info_soins, :imgSoins)");
         $query->execute([
@@ -49,12 +49,28 @@ public function getAll() {
             'info_soins' => $service->getInfo_soins(),
             'imgSoins' => $service->getImgsoins()
 
+    public function addService(serviceMapping $service) {
+        $query=$this->pdo->prepare('INSERT INTO cmc_service ( soins, info_soins,imgSoins) value(?,?,?)');
+        try{
+        $query->execute([
+             $service->getSoins(),
+             $service->getInfo_soins(),
+             $service->getImgsoins(),
+             
+
+
         ]);
         $service->setServiceID($this->pdo->lastInsertID());
     }
 
+
     public function updateService(ServiceMapping $service) {
         $query = $this->pdo->prepare("UPDATE cmc_service SET Name = :Name, soins = :soins, info_soins = :info_soins, imgSoins = :imgSoins WHERE serviceID = :serviceID");
+
+
+    public function updateService(serviceMapping $service) {
+        $query = $this->pdo->prepare("UPDATE cmc_service SET soins = :soins, info_soins = :info_soins, imgSoins = :imgSoins WHERE serviceID = :serviceID");
+
         
         
         $query->execute([

@@ -38,7 +38,8 @@ class ServiceMapping extends MappingAbstract
     //setters
 
     public function setServiceID(int $serviceID): void
-    {
+    {   $serviceID =strip_tags($serviceID);
+        $serviceID =trim($serviceID);
         $this->serviceID = $serviceID;
     }
 
