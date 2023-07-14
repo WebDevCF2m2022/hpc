@@ -60,7 +60,6 @@ echo"<hr>";
 ?>
 
 <form action="?addService" method="post" enctype="multipart/form-data">
-    <td><input type="text" name="serviceID" placeholder="serviceID"></td>
     <td><input type="text" name="soins" placeholder="soins"></td>
     <td><input type="text" name="info_soins" placeholder="info_soins"></td>
     <td><input type="text" name="imgSoins" placeholder="imgSoins"></td>

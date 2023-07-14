@@ -43,13 +43,13 @@ public function getAll() {
     }
     
     public function addService(serviceMapping $service) {
-        $query=$this->pdo->prepare('INSERT INTO cmc_service ( serviceID, soins, info_soins,imgSoins) value(?,?,?,?)');
+        $query=$this->pdo->prepare('INSERT INTO cmc_service ( soins, info_soins,imgSoins) value(?,?,?)');
         try{
         $query->execute([
              $service->getSoins(),
              $service->getInfo_soins(),
              $service->getImgsoins(),
-             $service->getServiceID(),
+             
 
         ]);}catch(Exception $e){
             die($e->getMessage());
@@ -59,7 +59,7 @@ public function getAll() {
 
 
     public function updateService(serviceMapping $service) {
-        $query = $this->pdo->prepare("UPDATE cmc_service SET serviceID=:serviceID, soins = :soins, info_soins = :info_soins, imgSoins = :imgSoins WHERE serviceID = :serviceID");
+        $query = $this->pdo->prepare("UPDATE cmc_service SET soins = :soins, info_soins = :info_soins, imgSoins = :imgSoins WHERE serviceID = :serviceID");
         
         
         $query->execute([
