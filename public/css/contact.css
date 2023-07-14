@@ -1,0 +1,252 @@
+/*contact page*/
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .main-head {
+    background-color: 1px solid rgba(255, 255, 255, 3);
+    color: #2D3672;
+  }
+  
+  a {
+    color: #2D3672;
+    text-decoration: none;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  a:hover {
+    font-weight: 700;
+    font-family: Inter;
+    color: #EFAC2C;
+  }
+  
+  nav {
+    width: 50%;
+    margin-left: 50%;
+  }
+  
+  nav ul {
+    display: flex;
+    flex: 1 1 40rem;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .slider {
+    height: 80vh;
+    position: relative;
+  }
+  
+  .slider img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  
+  .slider img.active {
+    opacity: 1;
+  }
+  
+  #logo {
+    height: 100px;
+    width: auto;
+  }
+  
+  #titreContact {
+    text-align: center;
+    color: #2D3672;
+  }
+  
+  hr {
+    height: 2px;
+    background-color: #EFAC2C;
+    width: 400px;
+    border: none;
+  }
+  
+  #contener {
+    height: 720px;
+    width: 900px;
+    background-color: #2D3672;
+    border-radius: 30px;
+    margin: 0 auto;
+  }
+  
+  #t1 {
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    font-weight: bold;
+  }
+  
+  #contLeft {
+    background-color: white;
+    width: 340px;
+    margin-left: 60px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 50px;
+    float: left;
+
+  }
+  
+  #contLeft h3 {
+    color: #2D3672;
+    font-weight: bold;
+  }
+  
+  #contLeft p {
+    color: #EFAC2C;
+  }
+  
+  .p1 {
+    line-height: 0px;
+  }
+  
+  #contBottom {
+    width: max;
+    height: 100px;
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  
+  #contBottom img {
+    margin-top: 15px;
+    height: 70px;
+    width: auto;
+  }
+  
+  #t2 {
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    font-weight: bold;
+  }
+  #map {
+    height: 325px;
+    width: 360px;
+    border-radius: 15px;
+    margin-left: 480px;
+    margin-top: 60px;
+  }
+
+  .leaflet-container .leaflet-control-attribution a{
+    font-size: 12px;
+  }
+
+
+/*carte Home*/
+
+#positionCarte {
+  grid-area: carteServices;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .carteServices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(90deg, #2D3672 18.75%, #518AC8 100%);
+  margin: 50px;
+  border-radius: 25px;
+  }
+  
+  .carteServices img {
+  background-color: white;
+  border-radius: 50%;
+  width: 130px;
+  margin: 30px auto 20px auto;
+  }
+  
+  .carteServices h2 {
+  text-align: center;
+  color: white;
+  font-size: medium;
+  margin-bottom: 20px;
+  }
+  
+  .carteServices p {
+  text-align: center;
+  max-width: 90%;
+  margin: auto;
+  color: white;
+  }
+  
+  .carteServices a {
+  background-color: white;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 30px auto 30px auto;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #EFAC2C;
+  font-weight: bold;
+  }
+
+  #services {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 20px 300px;
+    grid-template-areas:
+    "titreServices"
+    "hrServices"
+    "carteServices";
+    }
+    
+    #services h1 {
+    grid-area: titreServices;
+    justify-self: center;
+    color:#2D3672;
+    }
+    
+    hr {
+    grid-area: hrServices;
+    border: none;
+    background: none;
+    width: 500px;
+    height: 2px;
+    background-color: #EFAC2C;
+    
+    }
+
+     /*footer*/
+
+  .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color:#2D3672;
+    color: white;
+    font-size: 20px;
+    padding: 10px 0;
+    margin-top: 25%;
+
+}
+.footer .logo {
+    margin-right: 35%;
+    margin-top: 1%;
+}
+.footer img{
+    width:5vh;
+}

@@ -1,8 +1,8 @@
 <div class="footer">
-    <img class="logo" src="img/logo.png">
+    <img class="logo" src="img/logoBlanco.png">
 
 
-    <p>&copy Copyright 2023 CENTRE MEDICAL CHARF</p>
+    <p>&copy copyright2023 CENTRE MEDICAL CHARF</p>
     <div id="socialLogo">
 
         <a href=""><img src="img/instagram.png" alt=""></a>
