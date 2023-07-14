@@ -1,7 +1,7 @@
 <?php
 namespace model\ManagerModel;
 
-use model\MappingModel\ServiceMapping;
+use model\MappingModel\serviceMapping;
 use model\InterfaceModel\ManagerInterface;
 use PDO;
 use Exception;
@@ -16,7 +16,7 @@ public function __construct(PDO $pdo)
     $this->pdo = $pdo;
 }
 
-public function getOneById(int $id): ServiceMapping
+public function getOneById(int $id): serviceMapping
 
 {
     $query = $this->pdo->prepare("SELECT * FROM `cmc_service` WHERE `serviceID` = :id");
@@ -25,7 +25,7 @@ public function getOneById(int $id): ServiceMapping
     if($service === false) {
         throw new \Exception("Aucun service ne correspond à l'id $id");
     }
-    return new ServiceMapping($service);
+    return new serviceMapping($service);
 }
     
 public function getAll() {
@@ -36,19 +36,12 @@ public function getAll() {
             $services = [];
 
             foreach ($service as $row) {
-                $services[] = new ServiceMapping($row);
+                $services[] = new serviceMapping($row);
             }
             return $services;
        
     }
-
-    public function addService(ServiceMapping $service) {
-        $query=$this->pdo->prepare("INSERT INTO cmc_service (Name, soins, info_soins,imgSoins) VALUES (:Name, :soins, :info_soins, :imgSoins)");
-        $query->execute([
-            'soins' => $service->getSoins(),
-            'info_soins' => $service->getInfo_soins(),
-            'imgSoins' => $service->getImgsoins()
-
+    
     public function addService(serviceMapping $service) {
         $query=$this->pdo->prepare('INSERT INTO cmc_service ( soins, info_soins,imgSoins) value(?,?,?)');
         try{
@@ -58,32 +51,29 @@ public function getAll() {
              $service->getImgsoins(),
              
 
-
-        ]);
-        $service->setServiceID($this->pdo->lastInsertID());
+        ]);}catch(Exception $e){
+            die($e->getMessage());
+        }
+        return $service->setServiceID($this->pdo->lastInsertID());
     }
-
-
-    public function updateService(ServiceMapping $service) {
-        $query = $this->pdo->prepare("UPDATE cmc_service SET Name = :Name, soins = :soins, info_soins = :info_soins, imgSoins = :imgSoins WHERE serviceID = :serviceID");
 
 
     public function updateService(serviceMapping $service) {
         $query = $this->pdo->prepare("UPDATE cmc_service SET soins = :soins, info_soins = :info_soins, imgSoins = :imgSoins WHERE serviceID = :serviceID");
-
         
         
         $query->execute([
             'soins' => $service->getSoins(),
             'info_soins' => $service->getInfo_soins(),
             'imgSoins' => $service->getImgsoins(),
-            'serviceID' => $service->GetServiceID()
+            'serviceID' => $service->GetServiceID(),
+            'serviceID' => $service->getServiceID()
  
         ]);
         
     }
 
-    public function deleteService(ServiceMapping $service) {
+    public function deleteService(serviceMapping $service) {
         $query=$this->pdo->prepare("DELETE FROM cmc_service WHERE serviceID = :serviceID");
         $query->execute([
            'serviceID' => $service->getServiceID()
