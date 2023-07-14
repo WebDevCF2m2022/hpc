@@ -41,7 +41,7 @@ if (isset($_GET['addMedecin'])) {
 //test de la classe MedecinManager avec un try catch et la fonction GetOneById
 try {
 
-    $medecin = $testCoco->getOneById(2);
+    $medecin = $testCoco->getOneById(3);
 
 } catch (Exception $e) {
     echo $e->getMessage();
@@ -81,7 +81,7 @@ if (isset($_GET['updateMedecin'])) {
     //si oui on instancie un objet medecin avec les données du formulaire
     $medecin = new MedecinMapping($_POST);
     //on utilise la fonction update de la classe MedecinManager
-    $testCoco->update($medecin, $_GET['updateMedecin']);
+    $testCoco->update($medecin);
 }
 
 //verification si la variable get delete existe
@@ -123,18 +123,26 @@ if (isset($_GET['deleteMedecin'])) {
     </style>
         <?php foreach ($medecins as $medecin) : ?>
             <tr>
-                <td>
-                <form action="?updateMedecin=<?=$medecin->getMedecinID()?>" method="post" enctype="multipart/form-data">
-                    <td><input type="text" name="name" placeholder="name" value="<?= $medecin->getName() ?>"></td>
-                    <td><input type="text" name="nickname" placeholder="nickName" value="<?= $medecin->getNickName() ?>"></td>
-                    <td><input type="text" name="lang" placeholder="lang" value="<?= $medecin->getLang() ?>"></td>
-                    <td><input type="text" name="info" placeholder="info" value="<?= $medecin->getInfo() ?>"></td>
-                    <td><input type="text" name="imgMed" placeholder="imgMed" value="<?= $medecin->getImgMed() ?>"></td>
-                    <td><input type="submit" value="envoyer"></td>
+                <td><?= $medecin->getMedecinID() ?>
 
 
+                <td><?= $medecin->getName() ?>
+                    <br>   <input type="text"></td>
 
-                </form>
+                <td><?= $medecin->getNickName() ?>
+                    <br>   <input type="text"></td>
+
+                <td><?= $medecin->getLang() ?>
+                    <br>   <input type="text"></td>
+
+                <td><?= $medecin->getInfo() ?>
+                    <br>  <input type="text"></td>
+
+                <td><?= $medecin->getImgMed() ?>
+                    <br>   <input type="text"></td>
+
+                <td><a href="?updateMedecin=<?= $medecin->getMedecinID() ?>">Modifier</a></td>
+                <td><a href="?deleteMedecin=<?= $medecin->getMedecinID() ?>">Supprimer</a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

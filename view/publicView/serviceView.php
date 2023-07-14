@@ -16,8 +16,8 @@
         ?>
     </nav>
     <div class="banniere"></div>
-    <h4>Nos Services</h4>
-    
+    <h1 id="titi">Nos Services</h1>
+    <div class="carteService">
     <div class="serviceDoc">
         <div class="docteur">
             <img src="../public/img/logoMed.png" alt="">
@@ -30,7 +30,7 @@
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, optio quae atque similique sed explicabo quo, assumenda quidem praesentium dignissimos eligendi accusamus aliquid, sequi veniam! Distinctio repellendus in tempore quis? Doloribus, beatae? Rerum voluptatibus maiores dolores expedita tempore odio fugiat eum commodi error! Minus illum eos aspernatur ea modi, aut tempora magnam esse quibusdam eum dolorum, fuga laboriosam soluta asperiores</p>
         </div>
     </div>
-    
+    </div>
 
     
     <div class="serviceDoc">
@@ -39,11 +39,9 @@
             <h2>Dr rara</h2>
             <p>fr/nl/ar</p>
         </div>
-        <div class="serviceSeul">
     <h1>radiologie</h1>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, optio quae atque similique sed explicabo quo, assumenda quidem praesentium dignissimos eligendi accusamus aliquid, sequi veniam! Distinctio repellendus in tempore quis? Doloribus, beatae? Rerum voluptatibus maiores dolores expedita tempore odio fugiat eum commodi error! Minus illum eos aspernatur ea modi, aut tempora magnam esse quibusdam eum dolorum, fuga laboriosam soluta asperiores</p>
-        </div>
-</div>
+    </div>
     
     
     <div class="serviceDoc">
@@ -52,10 +50,8 @@
             <h2>Dr Gégé</h2>
             <p>fr/nl/ar</p>
         </div>
-        <div class="serviceSeul">
     <h1>gynécologie</h1>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, optio quae atque similique sed explicabo quo, assumenda quidem praesentium dignissimos eligendi accusamus aliquid, sequi veniam! Distinctio repellendus in tempore quis? Doloribus, beatae? Rerum voluptatibus maiores dolores expedita tempore odio fugiat eum commodi error! Minus illum eos aspernatur ea modi, aut tempora magnam esse quibusdam eum dolorum, fuga laboriosam soluta asperiores</p>
-        </div>
     </div>
 
     <footer>
