@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -18,31 +19,31 @@
             <br><hr><br><br>
             <div id="positionCarte">
                 <div class="carteServices">
-                    <img src="img/logoMed.png" alt="">
+                    <img src="img/gene.png" alt="">
                     <h2>GENERALISTE</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
                     <a href="#">SHOW ME</a>
                 </div>
                 <div class="carteServices">
-                    <img src="img/logoMed.png" alt="">
+                    <img src="img/inf.png" alt="">
                     <h2>INFIRMIER</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
-                    <a href=""">SHOW ME</a>
+                    <a href="">SHOW ME</a>
                 </div>
                 <div class="carteServices">
-                    <img src="img/logoMed.png" alt="">
-                    <h2>RADIOLOGIE</h2>
+                    <img src="img/hepat.png" alt="">
+                    <h2>HEPATOLOGIE</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
                     <a href="#">SHOW ME</a>
                 </div>
                 <div class="carteServices">
-                    <img src="img/logoMed.png" alt="">
+                    <img src="img/psy.png" alt="">
                     <h2>PSYCOLOGIE</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
                     <a href="#">SHOW ME</a>
                 </div>
                 <div class="carteServices">
-                    <img src="img/logoMed.png" alt="">
+                    <img src="img/dentisteMed.png" alt="">
                     <h2>DENTISTERIE</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iste maxime consequuntur unde eius corporis?</p>
                     <a href="#">SHOW ME</a>

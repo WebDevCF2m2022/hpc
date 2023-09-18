@@ -1,0 +1,29 @@
+.h1Faq {
+    font-size: 2em;
+    color:#2D3672 ;
+}
+
+
+.FAQ {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    width: 50%;
+    
+
+
+}
+details {
+    background: linear-gradient(90deg, #2D3672 18.75%, #518AC8 100%);
+    margin: 2%;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+summary {
+    font-size: larger;
+    margin: 3%;
+}

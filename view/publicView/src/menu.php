@@ -8,6 +8,7 @@
       <li><a href="?p=agen">DIARY</a></li>
       <li><a href="?p=contc">CONTACT</a></li>
       <li><a href="?p=faq">ABOUT</a></li>
+      <li><a href="?p=connexion">CONNECT</a></li>
     </ul>
   </nav>
 </header>
