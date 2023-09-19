@@ -1,9 +1,5 @@
 /*contact page*/
-html {
-    height: 100%;
-    width: 100%;
-  }
-  
+
   .main-head {
     background-color: 1px solid rgba(255, 255, 255, 3);
     color: #2D3672;
@@ -12,14 +8,12 @@ html {
   a {
     color: #2D3672;
     text-decoration: none;
-    font-family: Inter;
     font-size: 20px;
     font-weight: 700;
   }
   
   a:hover {
     font-weight: 700;
-    font-family: Inter;
     color: #EFAC2C;
   }
   
